@@ -1,0 +1,21 @@
+Login Page
+    - Will ask if they are a person who needs help or is volunteering
+    - Ask them to login or create an account
+        - Use firebase to create an account / authenticate account
+
+Need Help:
+1. If they need help take them to the shopping list section
+    - Basic functionality is a empty list where they can put what exactly they need
+        - They can also put alternatives if that item is not in stock
+2. Hit submit and then it'll find a user to look for
+3. Store the data in firebase
+    - User name
+    - address
+    - phone number
+    - shopping list
+
+Volunteer:
+1. Assign list from someone who needs help near them
+    - get shopping list data from firebase
+2. They pick up the payment method (card / cash)
+3. Person goes to store and gets the items and delivers to their address
