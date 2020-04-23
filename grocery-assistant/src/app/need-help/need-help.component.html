@@ -1,1 +1,8 @@
-<p>need-help works!</p>
+<div>
+    <h4>Shopping List</h4>
+</div>
+
+<div class="input-group">
+    <input type="text" class="form-control" #itemTitle>
+    <button type="button" (click)="onAdd(itemTitle)">Add</button>
+</div>
