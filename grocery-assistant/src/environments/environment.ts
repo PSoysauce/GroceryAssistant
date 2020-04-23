@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyDOaiTU7Kve8zAQ2vQ36GunBRGHg70f0YY",
+    authDomain: "groceryassistant-66368.firebaseapp.com",
+    databaseURL: "https://groceryassistant-66368.firebaseio.com",
+    projectId: "groceryassistant-66368",
+    storageBucket: "groceryassistant-66368.appspot.com",
+    messagingSenderId: "618455151673",
+    appId: "1:618455151673:web:acb7ae64ece73287c789e8",
+    measurementId: "G-BZS1V6G4WZ"
+  }
 };
 
 /*
