@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "grocery-assistant"
+    }
+  },
+  "defaultProject": "grocery-assistant",
+  "cli": {
+    "analytics": false
+  }
 }
