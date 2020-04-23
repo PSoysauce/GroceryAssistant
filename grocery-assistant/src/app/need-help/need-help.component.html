@@ -4,5 +4,9 @@
 
 <div class="input-group">
     <input type="text" class="form-control" #itemTitle>
-    <button type="button" (click)="onAdd(itemTitle)">Add</button>
+    <div class="input-group-addon hover-cursor" (click)="onAdd(itemTitle)">
+        <i>Add</i>
+        <!-- <button type="button">Add</button> -->
+    </div>
+    
 </div>
