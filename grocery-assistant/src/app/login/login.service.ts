@@ -36,9 +36,12 @@ export class LoginService {
     return firebase.auth().signInWithEmailAndPassword(email,password)
     //return this.afAuth.auth().signInWithEmailAndPassword(email, password)
       .then((result) => {
-        console.log("IT WORKS");
+        var elem = <HTMLInputElement> document.getElementById("volunteer");
         this.ngZone.run(() => {
-          this.router.navigate(['./volunteer']);
+          if(elem.checked)
+            this.router.navigate(['./volunteer']);
+          else 
+            this.router.navigate(['./need-help']);
         });
         //this.SetUserData(result.user);
       }).catch((error) => {
