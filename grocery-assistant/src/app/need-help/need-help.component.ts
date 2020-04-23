@@ -36,4 +36,7 @@ export class NeedHelpComponent implements OnInit {
     this.toDoService.checkOrUnCheckTitle($key,!isChecked);
   }
 
+  onDelete($key: string) {
+    this.toDoService.removeTitle($key);
+  }
 }
