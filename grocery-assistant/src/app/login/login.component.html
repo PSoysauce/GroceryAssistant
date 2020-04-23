@@ -6,15 +6,15 @@
 <body>
     <form id="loginbox">
         <label>Username</label>
-        <input class="input" id="user_name" type="text" placeholder="Username">
+        <input class="input" type="text" placeholder="Username" #userName required>
         <br>
         <label>Password</label>
-        <input class="input" id="password" type="password" placeholder="Password">
+        <input class="input" type="password" placeholder="Password" #userPassword required>
         <br>
         <input type="checkbox" id="volunteer">
         <label for="volunteer">Volunteer</label><br>
-        <button type="submit" id="login">Login</button>
-        <button type="button" id="register">Register</button>
+        <button type="button"(click)="authService.SignIn(userName.value, userPassword.value)" id="login">Login</button>
+        <button type="button" (click)="authService.SignUp(userName.value, userPassword.value)" id="register">Register</button>
         
     </form>
 </body>
