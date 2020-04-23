@@ -32,4 +32,8 @@ export class NeedHelpComponent implements OnInit {
     itemTitle.value = null;
   }
 
+  alterCheck($key: string, isChecked) {
+    this.toDoService.checkOrUnCheckTitle($key,!isChecked);
+  }
+
 }
