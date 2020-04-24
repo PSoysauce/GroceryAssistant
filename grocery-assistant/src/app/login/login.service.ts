@@ -9,10 +9,13 @@ import * as firebase from 'firebase/app';
 export class LoginService {
 
   userData: any; // Save logged in user data
-
+  private loggedIn: boolean;
+  ngOnInit(): void {
+    this.loggedIn=false;
+  }
   constructor(
     public afAuth: AngularFireAuth, // Inject Firebase auth service
-    public router: Router,
+    private router: Router,
     private auth: AngularFireAuth,
     public ngZone: NgZone // NgZone service to remove outside scope warning
   ) {    
@@ -38,6 +41,7 @@ export class LoginService {
       .then((result) => {
         var elem = <HTMLInputElement> document.getElementById("volunteer");
         this.ngZone.run(() => {
+          this.loggedIn = true;
           if(elem.checked)
             this.router.navigate(['./volunteer']);
           else 
@@ -57,6 +61,14 @@ export class LoginService {
         up and returns promise */
         // this.SendVerificationMail();
         // this.SetUserData(result.user);
+        var elem = <HTMLInputElement> document.getElementById("volunteer");
+        this.ngZone.run(() => {
+          this.loggedIn = true;
+          if(elem.checked)
+            this.router.navigate(['./volunteer']);
+          else 
+            this.router.navigate(['./need-help']);
+        });
       }).catch((error) => {
         window.alert(error.message)
       })
@@ -64,8 +76,7 @@ export class LoginService {
 
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null && user.emailVerified !== false) ? true : false;
+    return this.loggedIn;
   }
 
   // // Auth logic to run auth providers
