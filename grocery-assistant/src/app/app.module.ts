@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { NeedHelpComponent } from './need-help/need-help.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,9 @@ import { NeedHelpComponent } from './need-help/need-help.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AppRoutingModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
-  providers: [LoginService],
+  providers: [LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
